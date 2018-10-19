@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_210828) do
+ActiveRecord::Schema.define(version: 2018_10_19_211334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "widget_id"
+    t.integer "quantity", default: 0, null: false
+    t.integer "unit_price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["widget_id"], name: "index_line_items_on_widget_id"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.datetime "shipped_at"
@@ -28,4 +39,6 @@ ActiveRecord::Schema.define(version: 2018_10_19_210828) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "widgets"
 end
