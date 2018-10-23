@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Orders</title>
+  </head>
+  <body>
+    <h1>Orders</h1>
+
+    <ul>
+    <%= @orders.each do |order| %>
+      <li><%= link_to order.id, order_page(order) %></li>
+    <% end %>
+    </ul>
+  </body>
+</html>
