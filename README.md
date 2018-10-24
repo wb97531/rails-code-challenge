@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TODO
 
-Things you may want to cover:
+- The expedited flag on an order can't be disabled once it's been enabled. Find and fix the bug.
+- Add an order entry screen that allows creating an order with multiple line items.
 
-* Ruby version
+## Setup
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle install
+bundle exec rails db:create db:migrate
+bundle exec rspec
+```
