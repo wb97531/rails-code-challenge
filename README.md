@@ -18,3 +18,6 @@ bundle install
 bundle exec rails db:create db:migrate db:seed
 bundle exec rspec
 ```
+
+## Submission
+Send a link to your Fork of this code to [dev@pairin.com](mailto:dev@pairin.com) with any notes on what you did and why.
