@@ -11,7 +11,7 @@ class Order < ApplicationRecord
   end
 
   def settings(opts = {})
-    @expedite = opts[:expedite].presence
+    @expedite = opts[:expedite]
     @returns = opts[:returns].presence
     @warehouse = opts[:warehouse].presence
   end

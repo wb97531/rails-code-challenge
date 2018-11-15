@@ -22,6 +22,15 @@ RSpec.describe Order, type: :model do
       it { is_expected.to be_expedited }
     end
 
+    context 'when expedite is disabled after being enabled' do
+      before do
+        subject.settings(expedite: true)
+        subject.settings(expedite: false)
+      end
+
+      it { is_expected.to_not be_expedited }
+    end
+
     context 'when returns is present' do
       before { subject.settings(returns: true) }
       it { is_expected.to be_returnable }
