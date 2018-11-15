@@ -5,8 +5,19 @@
   <body>
     <h1>Orders</h1>
 
+    <h2>Shipped</h2>
     <ul>
-    <% @orders.each do |order| %>
+    <% @shipped_orders.each do |order| %>
+      <li>
+        <%= link_to order.id, order %>
+        <%= " - Shipped at: #{order.shipped_at}" %>
+      </li>
+    <% end %>
+    </ul>
+
+    <h2>Not Shipped</h2>
+    <ul>
+    <% @non_shipped_orders.each do |order| %>
       <li><%= link_to order.id, order %></li>
     <% end %>
     </ul>
